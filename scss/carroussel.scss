@@ -1,12 +1,20 @@
 .carroussel{
     transform: scale(0);
-    position: absolute;
-    width: 50%;
-    height: 50%;
+    position: fixed;
+    transition: transform, .25s;
+    width: 100%;
+    height: 100%;
     border: 2px solid red;
-    top: 25%;
-    left: 25%;
+    top: 0;
+    left: 0;
     z-index:10;
+
+    @media screen and (min-width: 400px) {
+        width: 75%;
+        height: 75%;
+        top: 12.5%;
+        left: 12.5%;
+    }
 }
 
 .carroussel__x{
@@ -26,9 +34,15 @@
 
 .carroussel__figure{
     position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .carroussel__img{
+    position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
 }

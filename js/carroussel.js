@@ -5,7 +5,9 @@
     let galerie = document.querySelector('.galerie');
     let carrousselFigure = document.querySelector('.carroussel__figure')
     let galerieImg = galerie.querySelectorAll('img')
+    let carrousselForm = document.querySelector('.carroussel__form')
     let index = 0;
+    let value;
 
     //carrousselImg.src = galerieImg.src;
     //carrousselFigure.appendChild(carrousselImg)
@@ -13,6 +15,7 @@
     for(const elm of galerieImg){
         console.log(elm.src);
         creerCarrousselImg(index,elm);
+        creerRadioImg(index);
         index = index + 1;
     }
 
@@ -36,12 +39,21 @@
     function creerRadioImg(index){
         let carrousselRadio = document.createElement('input');
         carrousselRadio.type = 'radio';
+        carrousselRadio.name = 'radio';
+        carrousselRadio.dataset.index = index;
+        carrousselRadio.classList.add('carroussel__radio');
+        carrousselForm.appendChild(carrousselRadio);
+        carrousselRadio.addEventListener('mousedown', function(e){
+            document.querySelectorAll('.carroussel__img').forEach(el =>
+                {
+                el.style.opacity = 0;
+                })
+            carrousselFigure.children[e.target.dataset.index].style.opacity = 1;
+            });
     }
 
     btn.addEventListener('mousedown', ouvrirGallerie);
     carroussel__x.addEventListener('mousedown', fermerGalerie);
-
-
 
     function ouvrirGallerie(){
         carroussel.classList.add("carroussel--ouvrir");

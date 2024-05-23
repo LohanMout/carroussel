@@ -8,11 +8,11 @@
  * Author URI: https://reference.ca
  */
 function enqueue_style_script(){
-    $version_css = filemtime(plugin_dir_path(__FILE__) . "scss/carroussel.scss");
+    $version_css = filemtime(plugin_dir_path(__FILE__) . "carroussel.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "js/carroussel.js");
 
     wp_enqueue_style('em_plugin_carroussel_css',
-    plugin_dir_url(__FILE__) . 'scss/carroussel.scss',
+    plugin_dir_url(__FILE__) . 'carroussel.css',
     array(),
     $version_css);
 

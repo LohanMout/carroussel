@@ -7,7 +7,7 @@
     border: 2px solid red;
     top: 0;
     left: 0;
-    z-index:100;
+    z-index:10000;
 
     @media screen and (min-width: 400px) {
         width: 75%;
@@ -17,11 +17,23 @@
     }
 }
 
-.carroussel__x{
+.ctnCarroussel__x{
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 100;
+}
+
+.carroussel__x{
+    color: black;
+    text-decoration: none;
 }
 
 .btn__ouvrir{

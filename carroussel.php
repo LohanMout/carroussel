@@ -33,7 +33,9 @@ function genereHTML(){
     $html = '
     <button class="btn__ouvrir">Ouvrir Carroussel</button>
     <div class="carroussel">
-        <a href="" class="carroussel__x">X</a>
+        <div class="ctnCarroussel__x">
+            <a href="" class="carroussel__x">X</a>
+        </div>
         <figure class="carroussel__figure"></figure>
         <form action="" class="carroussel__form"></form>
     </div>
